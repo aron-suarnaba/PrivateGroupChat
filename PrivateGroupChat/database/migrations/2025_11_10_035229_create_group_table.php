@@ -15,19 +15,22 @@ return new class extends Migration
             // Primary Key
             $table->id();
 
-            // Group Details
-            $table->string('name');
+            // Group Name
+            $table->string('name')->nullable();
 
-            // Foreign Key to the User who owns the group
-            // Assumes your users table is named 'users' and uses 'id' as primary key
-            $table->foreignId('owner_id')
-                  ->constrained('users')
-                  ->onDelete('cascade');
+            // Foreign Key Definition: owner_id references users_id in the users table
+            // It must be a string to match the type of users_id.
+            $table->string('owner_id')->nullable();
+
+            $table->foreign('owner_id')
+                  ->references('users_id') // References the specific column
+                  ->on('users')            // In the specific table
+                  ->onDelete('set null');  // Set the FK to NULL if the owner user is deleted
 
             // Privacy Flag
-            $table->boolean('is_private')->default(true); // Groups are private by default
+            $table->boolean('is_private')->nullable();
 
-            // Timestamps (created_at and updated_at)
+            // Timestamps
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-content">
-        <form action="" method="post">
+        <form action="{{ route('login.submit') }}" method="post">
+            @csrf
             <div class="card-header bg-dark bg-gradient text-white py-2">
                 <h2>Login</h2>
             </div>
@@ -10,7 +11,7 @@
                     <label for="email">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="user_password" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="user_password" name="password" placeholder="Password">
                     <label for="password">Password</label>
                 </div>
             </div>
