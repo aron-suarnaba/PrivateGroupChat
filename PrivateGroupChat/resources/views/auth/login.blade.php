@@ -6,11 +6,11 @@
             </div>
             <div class="card-body py-5">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                    <input type="text" class="form-control" id="user_email" name="email" placeholder="Email">
                     <label for="email">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+                    <input type="text" class="form-control" id="user_password" name="password" placeholder="Password">
                     <label for="password">Password</label>
                 </div>
             </div>

@@ -1,8 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
-        <div class="container-fluid">
-
-            <a href="#" class="navbar-brand">Never-Ending Nonsense</a>
+        <div class="container-fluid py-2">
+            <a href="#" class="navbar-brand"><i class="bi bi-chat-left-dots-fill ps-3"></i> Never-Ending Nonsense</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
