@@ -20,8 +20,6 @@
     <div class="page-wrapper">
         @yield('chat-box')
     </div>
-    <footer class="container-fluid">
-        @yield('footer')
-    </footer>
+    @yield('footer')
 </body>
 </html>

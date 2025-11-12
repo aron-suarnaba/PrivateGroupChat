@@ -11,3 +11,7 @@
 @section('chat-box')
     @include('home.content.chat-box')
 @endsection
+
+@section('footer')
+    @include('home.partials._footer')
+@endsection
