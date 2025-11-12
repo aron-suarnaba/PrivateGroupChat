@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 Use Illuminate\Validation\ValidationException;
 
 class UsersController extends Controller
 {
+
 
     public function login(Request $request){
         $credentials = $request->validate([

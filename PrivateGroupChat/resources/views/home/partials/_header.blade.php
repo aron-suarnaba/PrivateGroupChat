@@ -1,12 +1,16 @@
-<header class="navbar navbar-expand-md d-print-none">
+<header class="navbar navbar-expand-md d-print-none" style="min-height: 4rem;">
     <div class="container-xl">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
             aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+
+
         <!-- BEGIN NAVBAR LOGO -->
         <a href="../../.." aria-label="Tabler" class="navbar-brand navbar-brand-autodark me-3">
-                Never-Ending Nonsense
+            <img src="..\resources\asset\images\logo.svg" alt="logo">
+            Never-Ending Nonsense
         </a>
         <!-- END NAVBAR LOGO -->
 
@@ -45,6 +49,23 @@
                     <span class="nav-link-icon"><!-- Download SVG icon from http://tabler.io/icons/icon/checkbox -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-message-dots">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 11v.01" />
+                            <path d="M8 11v.01" />
+                            <path d="M16 11v.01" />
+                            <path
+                                d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z" />
+                        </svg>
+                    </span>
+                    <span class="nav-link-title"> Chat </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span class="nav-link-icon"><!-- Download SVG icon from http://tabler.io/icons/icon/checkbox -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="icon icon-1">
                             <path d="M9 11l3 3l8 -8" />
                             <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
@@ -60,7 +81,7 @@
                     aria-label="Open user menu">
                     <span class="avatar avatar-sm" style="background-image: url(/static/avatars/044m.jpg)"></span>
                     <div class="d-none d-xl-block ps-2">
-                        <div>Paweł Kuna</div>
+                        <div>{{ $user->first_name}} {{ $user->last_name }}</div>
                         <div class="mt-1 small text-secondary">UI Designer</div>
                     </div>
                 </a>
