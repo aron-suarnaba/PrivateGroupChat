@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const logo = ref('/img/logo.png');
+const logo = ref('./img/logo.png');
 </script>
 
 <template>

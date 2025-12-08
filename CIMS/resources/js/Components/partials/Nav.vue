@@ -1,17 +1,16 @@
 <script setup>
-// import { Link } from '@inertiajs/vue3';
-const avatarPath = '@/public/img/avatar.png';
+import { ref } from 'vue';
+
+const avatarPath = ref('./img/avatar.png');
 </script>
 
 <template>
     <nav
-        class="app-header navbar navbar-expand bg-body"
+        class="app-header navbar navbar-expand navbar-dark navbar-primary"
         id="navigation"
         tabindex="-1"
     >
-        <!--begin::Container-->
         <div class="container-fluid">
-            <!--begin::Start Navbar Links-->
             <ul class="navbar-nav" role="navigation" aria-label="Navigation 1">
                 <li class="nav-item">
                     <a
@@ -30,15 +29,12 @@ const avatarPath = '@/public/img/avatar.png';
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <!--end::Start Navbar Links-->
 
-            <!--begin::End Navbar Links-->
             <ul
                 class="navbar-nav ms-auto"
                 role="navigation"
                 aria-label="Navigation 2"
             >
-                <!--begin::Navbar Search-->
                 <li class="nav-item">
                     <a
                         class="nav-link"
@@ -49,9 +45,7 @@ const avatarPath = '@/public/img/avatar.png';
                         <i class="bi bi-search"></i>
                     </a>
                 </li>
-                <!--end::Navbar Search-->
 
-                <!--begin::Messages Dropdown Menu-->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-chat-text"></i>
@@ -61,7 +55,6 @@ const avatarPath = '@/public/img/avatar.png';
                         class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
                     >
                         <a href="#" class="dropdown-item">
-                            <!--begin::Message-->
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
@@ -86,11 +79,9 @@ const avatarPath = '@/public/img/avatar.png';
                                     </p>
                                 </div>
                             </div>
-                            <!--end::Message-->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <!--begin::Message-->
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
@@ -115,11 +106,9 @@ const avatarPath = '@/public/img/avatar.png';
                                     </p>
                                 </div>
                             </div>
-                            <!--end::Message-->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <!--begin::Message-->
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
@@ -144,7 +133,6 @@ const avatarPath = '@/public/img/avatar.png';
                                     </p>
                                 </div>
                             </div>
-                            <!--end::Message-->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer"
@@ -152,9 +140,7 @@ const avatarPath = '@/public/img/avatar.png';
                         >
                     </div>
                 </li>
-                <!--end::Messages Dropdown Menu-->
 
-                <!--begin::Notifications Dropdown Menu-->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-bell-fill"></i>
@@ -197,9 +183,7 @@ const avatarPath = '@/public/img/avatar.png';
                         </a>
                     </div>
                 </li>
-                <!--end::Notifications Dropdown Menu-->
 
-                <!--begin::Fullscreen Toggle-->
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-lte-toggle="fullscreen">
                         <i
@@ -213,9 +197,7 @@ const avatarPath = '@/public/img/avatar.png';
                         ></i>
                     </a>
                 </li>
-                <!--end::Fullscreen Toggle-->
 
-                <!--begin::User Menu Dropdown-->
                 <li class="nav-item dropdown user-menu">
                     <a
                         href="#"
@@ -223,7 +205,7 @@ const avatarPath = '@/public/img/avatar.png';
                         data-bs-toggle="dropdown"
                     >
                         <img
-                            src="#"
+                            :src="avatarPath"
                             class="user-image rounded-circle shadow"
                             alt="User Image"
                         />
@@ -232,8 +214,7 @@ const avatarPath = '@/public/img/avatar.png';
                     <ul
                         class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
                     >
-                        <!--begin::User Image-->
-                        <li class="user-header text-bg-primary">
+                        <li class="user-header text-bg-primary d-flex">
                             <img
                                 :src="avatarPath"
                                 class="rounded-circle shadow"
@@ -244,10 +225,7 @@ const avatarPath = '@/public/img/avatar.png';
                                 <small>Member since Nov. 2023</small>
                             </p>
                         </li>
-                        <!--end::User Image-->
-                        <!--begin::Menu Body-->
                         <li class="user-body">
-                            <!--begin::Row-->
                             <div class="row">
                                 <div class="col-4 text-center">
                                     <a href="#">Followers</a>
@@ -259,10 +237,7 @@ const avatarPath = '@/public/img/avatar.png';
                                     <a href="#">Friends</a>
                                 </div>
                             </div>
-                            <!--end::Row-->
                         </li>
-                        <!--end::Menu Body-->
-                        <!--begin::Menu Footer-->
                         <li class="user-footer">
                             <a href="#" class="btn btn-default btn-flat"
                                 >Profile</a
@@ -273,13 +248,9 @@ const avatarPath = '@/public/img/avatar.png';
                                 >Sign out</a
                             >
                         </li>
-                        <!--end::Menu Footer-->
                     </ul>
                 </li>
-                <!--end::User Menu Dropdown-->
             </ul>
-            <!--end::End Navbar Links-->
         </div>
-        <!--end::Container-->
     </nav>
 </template>
