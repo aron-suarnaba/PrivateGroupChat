@@ -6,7 +6,8 @@ const avatarPath = ref('./img/avatar.png');
 
 <template>
     <nav
-        class="app-header navbar navbar-expand navbar-dark navbar-primary"
+        class="app-header navbar navbar-expand bg-light"
+        data-bs-theme="light"
         id="navigation"
         tabindex="-1"
     >
@@ -201,7 +202,7 @@ const avatarPath = ref('./img/avatar.png');
                 <li class="nav-item dropdown user-menu">
                     <a
                         href="#"
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle d-flex align-items-center justify-content-center gap-2"
                         data-bs-toggle="dropdown"
                     >
                         <img

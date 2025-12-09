@@ -7,7 +7,7 @@ defineOptions({ layout: HomeLayout });
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">License</h3>
+                    <h1 class="h3 mb-0">License</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
@@ -26,11 +26,10 @@ defineOptions({ layout: HomeLayout });
         <div class="container-fluid">
             <p>
                 AdminLTE is an open source project that is licensed under the
-                <a href="https://opensource.org/licenses/MIT">MIT license</a>.
-                This allows you to do pretty much anything you want as long as
-                you include the copyright in “all copies or substantial portions
-                of the Software.” Attribution is not required (though very much
-                appreciated).
+                <a href="#">MIT license</a>. This allows you to do pretty much
+                anything you want as long as you include the copyright in “all
+                copies or substantial portions of the Software.” Attribution is
+                not required (though very much appreciated).
             </p>
             <h5 class="text-bold text-dark mt-3">
                 What You Are <span class="text-success">Allowed</span> To Do

@@ -15,7 +15,7 @@
     @inertiaHead
 </head>
 
-<body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary app-loaded sidebar-open">
+<body class="sidebar-mini layout-fixed">
     @inertia
 </body>
 

@@ -5,7 +5,7 @@ const logo = ref('./img/logo.png');
 </script>
 
 <template>
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+    <aside class="app-sidebar bg-secondary-subtle" data-bs-theme="light">
         <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
             <!--begin::Brand Link-->
@@ -14,7 +14,7 @@ const logo = ref('./img/logo.png');
                 <img
                     :src="logo"
                     alt="AdminLTE Logo"
-                    class="brand-image opacity-75 shadow"
+                    class="brand-image rounded-circle opacity-75 shadow"
                 />
                 <!--end::Brand Image-->
                 <!--begin::Brand Text-->
