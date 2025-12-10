@@ -1,29 +1,39 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const logo = ref('./img/logo.png');
+const HomePath = ref(route('Welcome'));
+const LoginPath = ref(route('login'));
+</script>
 <template>
-    <nav class="app-header navbar navbar-expand bg-body">
+    <div class="app-header">
         <div class="container-fluid">
             <header
-                class="d-flex justify-content-center border-bottom mb-4 flex-wrap py-3"
+                class="d-flex justify-content-center mb-4 flex-wrap px-5 pt-4"
             >
                 <a
                     href="/"
                     class="d-flex align-items-center mb-md-0 me-md-auto link-body-emphasis text-decoration-none mb-3"
                 >
-                    <svg
-                        class="bi me-2"
-                        width="40"
-                        height="32"
-                        aria-hidden="true"
-                    >
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4">Simple header</span>
+                    <img
+                        :src="logo"
+                        alt="logo"
+                        id="logo"
+                        class="rounded-circle me-2 shadow"
+                    />
+                    <span class="fs-4">CISM</span>
                 </a>
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page"
+                        <a
+                            v-bind:href="HomePath"
+                            class="nav-link active"
+                            aria-current="page"
                             >Home</a
                         >
+                    </li>
+                    <li class="nav-item">
+                        <a v-bind:href="LoginPath" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Features</a>
@@ -40,5 +50,11 @@
                 </ul>
             </header>
         </div>
-    </nav>
+    </div>
 </template>
+<style scoped>
+#logo {
+    width: 38px;
+    height: 42px;
+}
+</style>

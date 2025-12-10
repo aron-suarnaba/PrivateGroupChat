@@ -1,13 +1,17 @@
 <script setup>
-import { Head } from '@inertiajs/vue3';
-
-import Header from '@/Components/partials/header.vue';
 import MainSection from '@/Components/section/MainSection.vue';
+
+import WelcomeLayout from '@/Layouts/WelcomeLayout.vue';
+defineOptions({ layout: WelcomeLayout });
 </script>
 
 <template>
-    <Head />
-
-    <Header />
     <MainSection />
 </template>
+
+<style scoped>
+#logo {
+    width: 40px;
+    height: 32px;
+}
+</style>

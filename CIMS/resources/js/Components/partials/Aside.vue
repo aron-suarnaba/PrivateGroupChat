@@ -18,7 +18,7 @@ const logo = ref('./img/logo.png');
                 />
                 <!--end::Brand Image-->
                 <!--begin::Brand Text-->
-                <span class="brand-text fw-light">AdminLTE 4</span>
+                <span class="brand-text fw-light">CISM</span>
                 <!--end::Brand Text-->
             </a>
             <!--end::Brand Link-->
