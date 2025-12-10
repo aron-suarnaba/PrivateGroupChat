@@ -5,7 +5,7 @@ import Header from '@/Components/partials/Header.vue';
 <template>
     <div class="app-wrapper">
         <Header />
-        <main class="app-main shadow-md" id="main">
+        <main class="login-page app-main shadow-md" id="main">
             <slot />
         </main>
         <Footer />

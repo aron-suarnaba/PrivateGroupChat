@@ -1,47 +1,88 @@
-<script setup></script>
+<script setup>
+import { useForm } from '@inertiajs/vue3';
+
+const form = useForm({
+    email: '',
+    password: '',
+    remember: false,
+});
+
+const submit = () => {
+    form.post(route('login.store'), {
+        onFinish: () => {
+            form.reset('password');
+        },
+    });
+};
+</script>
 <template>
     <div class="login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="#"><b>Admin</b>LTE</a>
+                <a href="#"><b>CIMS</b></a>
             </div>
-            <!-- /.login-logo -->
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Sign in to start your session</p>
-
-                    <form action="#" method="post">
+                    <div
+                        v-if="form.errors.email"
+                        class="alert alert-danger"
+                        role="alert"
+                    >
+                        {{ form.errors.email }}
+                    </div>
+                    <form @submit.prevent="submit">
                         <div class="input-group mb-3">
                             <input
                                 type="email"
                                 class="form-control"
+                                :class="{ 'is-invalid': form.errors.email }"
                                 placeholder="Email"
                                 aria-label="Email"
+                                name="email"
+                                v-model="form.email"
+                                autofocus
+                                required
                             />
                             <div class="input-group-text">
                                 <span class="bi bi-envelope"></span>
+                            </div>
+                            <div
+                                v-if="form.errors.email"
+                                class="invalid-feedback"
+                            >
+                                {{ form.errors.email }}
                             </div>
                         </div>
                         <div class="input-group mb-3">
                             <input
                                 type="password"
                                 class="form-control"
+                                :class="{ 'is-invalid': form.errors.password }"
                                 placeholder="Password"
                                 aria-label="Password"
+                                name="password"
+                                v-model="form.password"
+                                required
                             />
                             <div class="input-group-text">
                                 <span class="bi bi-lock-fill"></span>
                             </div>
+                            <div
+                                v-if="form.errors.password"
+                                class="invalid-feedback"
+                            >
+                                {{ form.errors.password }}
+                            </div>
                         </div>
-                        <!--begin::Row-->
                         <div class="row">
                             <div class="col-8">
                                 <div class="form-check">
                                     <input
                                         class="form-check-input"
                                         type="checkbox"
-                                        value=""
                                         id="flexCheckDefault"
+                                        v-model="form.remember"
                                     />
                                     <label
                                         class="form-check-label"
@@ -51,26 +92,24 @@
                                     </label>
                                 </div>
                             </div>
-                            <!-- /.col -->
                             <div class="col-4">
                                 <div class="d-grid gap-2">
                                     <button
                                         type="submit"
                                         class="btn btn-primary"
+                                        :disabled="form.processing"
                                     >
                                         Sign In
                                     </button>
                                 </div>
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!--end::Row-->
                     </form>
 
                     <div
                         class="social-auth-links d-grid mb-3 gap-2 text-center"
                     >
-                        <p>- OR -</p>
+                        <p></p>
                         <a href="#" class="btn btn-primary">
                             <i class="bi bi-facebook me-2"></i> Sign in using
                             Facebook
@@ -80,7 +119,6 @@
                             Google+
                         </a>
                     </div>
-                    <!-- /.social-auth-links -->
 
                     <p class="mb-1">
                         <a href="forgot-password.html">I forgot my password</a>
@@ -91,7 +129,6 @@
                         </a>
                     </p>
                 </div>
-                <!-- /.login-card-body -->
             </div>
         </div>
     </div>

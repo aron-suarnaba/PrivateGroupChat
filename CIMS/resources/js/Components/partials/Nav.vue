@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from 'vue';
+import { router } from '@inertiajs/vue3';
 
+const handleLogout = () => {
+    router.post(route('logout'));
+};
 const avatarPath = ref('./img/avatar.png');
 </script>
 
@@ -243,11 +247,13 @@ const avatarPath = ref('./img/avatar.png');
                             <a href="#" class="btn btn-default btn-flat"
                                 >Profile</a
                             >
-                            <a
-                                href="#"
+                            <button
+                                type="button"
+                                @click.prevent="handleLogout"
                                 class="btn btn-default btn-flat float-end"
-                                >Sign out</a
                             >
+                                Sign out
+                            </button>
                         </li>
                     </ul>
                 </li>

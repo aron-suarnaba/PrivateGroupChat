@@ -1,16 +1,25 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia; // Don't forget to import Inertia
+use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('Welcome');
 
-Route::get('/login', function(){
+Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
-Route::get('/Home', function () {
-    return Inertia::render('Home');
-})->name('Home');
+Route::post('/login', [UserController::class, 'store'])
+    ->name('login.store');
+
+Route::post('/logout', [UserController::class, 'logout'])
+    ->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Home');
+    })->name('dashboard');
+});

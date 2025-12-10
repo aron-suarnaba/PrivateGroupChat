@@ -2,13 +2,14 @@
 <template>
     <div class="app-content">
         <div class="container-fluid">
-            <div class="row mt-3">
-                <div class="col-sm-12 col-md-6 ps-5 pt-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 ps-5">
                     <div
-                        class="d-flex flex-column justify-content-center align-items-center m-3 ps-4 pt-5"
+                        class="d-flex flex-column justify-content-center align-items-center ps-4 pt-3"
                     >
-                        <h1 class="display-5 fw-bold mb-2">
-                            Welcome to the CISM Application
+                        <h1 class="display-5 fw-bolder mb-2">
+                            Welcome to the
+                            <span class="fw-bold text-primary">CIMS</span>
                         </h1>
                         <p class="fs-4 mb-4">
                             This is a simple hero unit, a simple jumbotron-style

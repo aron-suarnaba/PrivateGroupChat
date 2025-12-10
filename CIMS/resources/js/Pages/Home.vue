@@ -4,15 +4,15 @@ defineOptions({ layout: HomeLayout });
 </script>
 <template>
     <div class="app-content-header">
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container">
+            <div class="row my-4">
                 <div class="col-sm-6">
                     <h1 class="h3 mb-0">License</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item">
-                            <a href="#">Docs</a>
+                            <a href="#" class="text-underline">Docs</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             License
@@ -23,7 +23,7 @@ defineOptions({ layout: HomeLayout });
         </div>
     </div>
     <div class="app-content">
-        <div class="container-fluid">
+        <div class="container">
             <p>
                 AdminLTE is an open source project that is licensed under the
                 <a href="#">MIT license</a>. This allows you to do pretty much

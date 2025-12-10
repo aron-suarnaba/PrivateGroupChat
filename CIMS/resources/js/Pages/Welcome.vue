@@ -8,10 +8,3 @@ defineOptions({ layout: WelcomeLayout });
 <template>
     <MainSection />
 </template>
-
-<style scoped>
-#logo {
-    width: 40px;
-    height: 32px;
-}
-</style>
