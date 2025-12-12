@@ -2,29 +2,21 @@
 import { ref } from 'vue';
 
 const logo = ref('./img/logo.png');
+const AssetInventoryManagement = ref(route('AssetInventoryManagement'));
 </script>
 
 <template>
     <aside class="app-sidebar bg-secondary-subtle" data-bs-theme="light">
-        <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
-            <!--begin::Brand Link-->
             <a href="#" class="brand-link">
-                <!--begin::Brand Image-->
                 <img
                     :src="logo"
                     alt="AdminLTE Logo"
                     class="brand-image rounded-circle opacity-75 shadow"
                 />
-                <!--end::Brand Image-->
-                <!--begin::Brand Text-->
                 <span class="brand-text fw-light">CISM</span>
-                <!--end::Brand Text-->
             </a>
-            <!--end::Brand Link-->
         </div>
-        <!--end::Sidebar Brand-->
-        <!--begin::Sidebar Wrapper-->
         <div class="sidebar-wrapper" data-overlayscrollbars="host">
             <div class="os-size-observer">
                 <div class="os-size-observer-listener"></div>
@@ -45,10 +37,8 @@ const logo = ref('./img/logo.png');
                 "
             >
                 <nav class="mt-2">
-                    <!--begin::Sidebar Menu-->
                     <ul
                         class="nav sidebar-menu flex-column"
-                        data-lte-toggle="treeview"
                         role="navigation"
                         aria-label="Main navigation"
                         data-accordion="false"
@@ -57,40 +47,70 @@ const logo = ref('./img/logo.png');
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-speedometer"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                v-bind:href="AssetInventoryManagement"
+                                class="nav-link"
+                            >
+                                <i class="bi bi-pc-display"></i>
                                 <p>
-                                    Dashboard
-                                    <i
-                                        class="nav-arrow bi bi-chevron-right"
-                                    ></i>
+                                    Assets & Inventory Management
+                                    <i class="bi bi-chevron-left right"></i>
                                 </p>
                             </a>
-                            <ul
-                                class="nav nav-treeview"
-                                role="navigation"
-                                aria-label="Navigation 4"
-                            >
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-router-fill"></i>
+                                <p>Network Monitoring & Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-database-fill"></i>
+                                <p>Server & System Monitoring</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-wrench-adjustable"></i>
+                                <p>Configuration & Patch Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-shield-shaded"></i>
+                                <p>Security Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-file-bar-graph-fill"></i>
+                                <p>Backup & Recovery Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-cloud-fill"></i>
+                                <p>Cloud & Virtualization Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-journal-text"></i>
+                                <p>Logging, Auditing, & Reporting</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-person-circle"></i>
+                                <p>User & Access Management</p>
+                            </a>
                         </li>
                     </ul>
-                    <!--end::Sidebar Menu-->
                 </nav>
             </div>
             <div

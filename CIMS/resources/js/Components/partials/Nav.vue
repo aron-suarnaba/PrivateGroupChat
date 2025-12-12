@@ -6,12 +6,15 @@ const handleLogout = () => {
     router.post(route('logout'));
 };
 const avatarPath = ref('./img/avatar.png');
+const toggleSidebar = () => {
+    document.body.classList.toggle('sidebar-open');
+};
 </script>
 
 <template>
     <nav
-        class="app-header navbar navbar-expand bg-light"
-        data-bs-theme="light"
+        class="app-header navbar navbar-expand bg-primary bg-gradient"
+        data-bs-theme="dark"
         id="navigation"
         tabindex="-1"
     >
@@ -20,9 +23,9 @@ const avatarPath = ref('./img/avatar.png');
                 <li class="nav-item">
                     <a
                         class="nav-link"
-                        data-lte-toggle="sidebar"
                         href="#"
                         role="button"
+                        @click.prevent="toggleSidebar"
                     >
                         <i class="bi bi-list"></i>
                     </a>
@@ -34,7 +37,6 @@ const avatarPath = ref('./img/avatar.png');
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-
             <ul
                 class="navbar-nav ms-auto"
                 role="navigation"
@@ -50,7 +52,6 @@ const avatarPath = ref('./img/avatar.png');
                         <i class="bi bi-search"></i>
                     </a>
                 </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-chat-text"></i>
@@ -59,86 +60,6 @@ const avatarPath = ref('./img/avatar.png');
                     <div
                         class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
                     >
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <img
-                                        src="#"
-                                        alt="User Avatar"
-                                        class="img-size-50 rounded-circle me-3"
-                                    />
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="fs-7 text-danger float-end"
-                                            ><i class="bi bi-star-fill"></i
-                                        ></span>
-                                    </h3>
-                                    <p class="fs-7">
-                                        Call me whenever you can...
-                                    </p>
-                                    <p class="fs-7 text-secondary">
-                                        <i class="bi bi-clock-fill me-1"></i> 4
-                                        Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <img
-                                        src="#"
-                                        alt="User Avatar"
-                                        class="img-size-50 rounded-circle me-3"
-                                    />
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span
-                                            class="fs-7 text-secondary float-end"
-                                        >
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                    </h3>
-                                    <p class="fs-7">I got your message bro</p>
-                                    <p class="fs-7 text-secondary">
-                                        <i class="bi bi-clock-fill me-1"></i> 4
-                                        Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <img
-                                        src="#"
-                                        alt="User Avatar"
-                                        class="img-size-50 rounded-circle me-3"
-                                    />
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span
-                                            class="fs-7 text-warning float-end"
-                                        >
-                                            <i class="bi bi-star-fill"></i>
-                                        </span>
-                                    </h3>
-                                    <p class="fs-7">The subject goes here</p>
-                                    <p class="fs-7 text-secondary">
-                                        <i class="bi bi-clock-fill me-1"></i> 4
-                                        Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer"
                             >See All Messages</a
@@ -159,29 +80,6 @@ const avatarPath = ref('./img/avatar.png');
                         <span class="dropdown-item dropdown-header"
                             >15 Notifications</span
                         >
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="bi bi-envelope me-2"></i> 4 new messages
-                            <span class="text-secondary fs-7 float-end"
-                                >3 mins</span
-                            >
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="bi bi-people-fill me-2"></i> 8 friend
-                            requests
-                            <span class="text-secondary fs-7 float-end"
-                                >12 hours</span
-                            >
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="bi bi-file-earmark-fill me-2"></i> 3 new
-                            reports
-                            <span class="text-secondary fs-7 float-end"
-                                >2 days</span
-                            >
-                        </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">
                             See All Notifications

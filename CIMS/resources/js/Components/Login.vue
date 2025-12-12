@@ -109,7 +109,7 @@ const submit = () => {
                     <div
                         class="social-auth-links d-grid mb-3 gap-2 text-center"
                     >
-                        <p></p>
+                        <p>OR</p>
                         <a href="#" class="btn btn-primary">
                             <i class="bi bi-facebook me-2"></i> Sign in using
                             Facebook

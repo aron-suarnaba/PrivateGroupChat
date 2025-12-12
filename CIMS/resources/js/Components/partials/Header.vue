@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 const logo = ref('./img/logo.png');
-const HomePath = ref(route('Welcome'));
+const HomePath = ref(route('welcome'));
 const LoginPath = ref(route('login'));
 </script>
 <template>

@@ -6,7 +6,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
-})->name('Welcome');
+})->name('welcome');
 
 Route::get('/login', function () {
     return Inertia::render('Login');
@@ -22,4 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Home');
     })->name('dashboard');
+
+    Route::get('/AssetInventoryManagement', function(){
+        return Inertia::render('AssetInventoryManagement');
+    })->name('AssetInventoryManagement');
 });

@@ -31,3 +31,12 @@ createInertiaApp({
         }
     },
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AdminLTE sidebar manually
+    const toggle = document.querySelector('[data-lte-toggle="sidebar"]');
+
+    toggle?.addEventListener('click', () => {
+        document.body.classList.toggle('sidebar-open');
+    });
+});
