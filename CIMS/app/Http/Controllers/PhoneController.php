@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Phone;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PhoneController extends Controller
 {
@@ -12,7 +13,7 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('AssetInventoryManagement/Phone');
     }
 
     /**

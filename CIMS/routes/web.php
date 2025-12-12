@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,7 +24,10 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Home');
     })->name('dashboard');
 
-    Route::get('/AssetInventoryManagement', function(){
-        return Inertia::render('AssetInventoryManagement');
-    })->name('AssetInventoryManagement');
+    Route::get('/AssetAndInventoryManagement', function(){
+        return Inertia::render('AssetAndInventoryManagement');
+    })->name('AssetAndInventoryManagement');
+
+    Route::get('/AssetAndInventoryManagement/Phone', [PhoneController::class, 'index'])
+    ->name('phone.index');
 });
