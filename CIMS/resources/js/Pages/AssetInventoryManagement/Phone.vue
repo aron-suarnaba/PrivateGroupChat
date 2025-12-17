@@ -1,6 +1,7 @@
 <script setup>
 import HomeLayout from '@/Layouts/HomeLayout.vue';
 import PhoneCard from '@/Components/PhoneCard.vue';
+import BackButton from '@/Components/BackButton.vue';
 import { defineOptions, defineProps, ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 
@@ -122,7 +123,13 @@ const getPhoneImagePath = (phone) => {
     <div class="app-content">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-sm-12 col-md-4"></div>
+                <div class="col-sm-12 col-md-4">
+                    <BackButton
+                        @click.prevent="
+                            router.get(route('AssetAndInventoryManagement'))
+                        "
+                    />
+                </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="input-group">
                         <label for="AssetSearchInput" class="input-group-text"

@@ -3,6 +3,8 @@ import HomeLayout from '@/Layouts/HomeLayout.vue';
 import InfoBox from '@/Components/InfoBox.vue';
 import { defineOptions } from 'vue';
 import { router } from '@inertiajs/vue3';
+import BackButton from '@/Components/BackButton.vue';
+
 defineOptions({ layout: HomeLayout });
 const phoneIndex = route('phone.index');
 const gotoHome = () => {
@@ -39,7 +41,11 @@ const goToPhoneIndex = () => {
     <div class="app-content">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-sm-12 col-md-4"></div>
+                <div class="col-sm-12 col-md-4">
+                    <BackButton
+                        @click.prevent="router.get(route('dashboard'))"
+                    />
+                </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="input-group">
                         <label for="AssetSearchInput" class="input-group-text"

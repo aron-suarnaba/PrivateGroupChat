@@ -2,7 +2,7 @@
 import HomeLayout from '@/Layouts/HomeLayout.vue';
 import { defineOptions, defineProps } from 'vue';
 import { router } from '@inertiajs/vue3';
-import { Head } from '@inertiajs/vue3';
+import BackButton from '@/Components/BackButton.vue';
 
 defineOptions({ layout: HomeLayout });
 
@@ -69,7 +69,6 @@ const formatDate = (dateString, locale = 'en-US') => {
 </script>
 
 <template>
-    <Head :title="props.phone.model" />
     <div class="app-content-header">
         <div class="container">
             <div class="row my-4">
@@ -121,14 +120,11 @@ const formatDate = (dateString, locale = 'en-US') => {
                 <div class="card-body pt-0">
                     <div class="row my-3">
                         <div class="col-sm-12 col-md-8">
-                            <button
-                                type="button"
-                                class="btn btn-outline-secondary ms-2"
-                                @click.prevent="gotoPhoneIndex"
-                            >
-                                <i class="bi bi-arrow-left"></i>
-                                Back to List
-                            </button>
+                            <BackButton
+                                @click.prevent="
+                                    router.get(route('phone.index'))
+                                "
+                            />
                         </div>
                         <div
                             class="col-sm-12 col-md-4 d-flex justify-content-end gap-2"

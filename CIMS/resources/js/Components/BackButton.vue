@@ -2,6 +2,6 @@
 <template>
     <button type="button" class="btn btn-outline-secondary">
         <i class="bi bi-arrow-left"></i>
-        Back to List
+        Back
     </button>
 </template>
