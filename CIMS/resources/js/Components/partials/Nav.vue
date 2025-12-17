@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 
 const handleLogout = () => {
     router.post(route('logout'));
 };
-const avatarPath = ref('./img/avatar.png');
+import avatarPath from '/public/img/avatar.png';
 const toggleSidebar = () => {
     document.body.classList.toggle('sidebar-open');
 };

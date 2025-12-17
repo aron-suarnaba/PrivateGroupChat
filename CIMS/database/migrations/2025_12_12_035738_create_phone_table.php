@@ -16,21 +16,26 @@ return new class extends Migration
             $table->timestamps();
             $table->string('model');
             $table->string('serial_num');
-            $table->string('ramRom')->nullable();
-            $table->string('imei')->nullable();
-            $table->string('issued_accessories');
-            $table->boolean('with_cashout');
-            $table->string('issued_to');
-            $table->date('date_issued');
-            $table->string('issued_by');
-            $table->boolean('issuedAcknowledgementIT');
-            $table->boolean('issuedAcknowledgementPurchasing');
+            $table->string('brand');
+            $table->string('ram');
+            $table->string('rom')->nullable();
+            $table->string('imei_one')->nullable();
+            $table->string('imei_two')->nullable();
+            $table->string('remarks')->nullable();
+            $table->string('issued_accessories')->nullable();
+            $table->boolean('with_cashout')->nullable();
+            $table->string('issued_to')->nullable();
+            $table->string('issued_to_department')->nullable();
+            $table->date('date_issued')->nullable();
+            $table->string('issued_by')->nullable();
+            $table->boolean('issuedAcknowledgementIT')->nullable();
+            $table->boolean('issuedAcknowledgementPurchasing')->nullable();
             $table->string('returned_accessories')->nullable();
             $table->string('returned_by')->nullable();
             $table->date('returned_date')->nullable();
             $table->string('returned_to')->nullable();
-            $table->boolean('returnedAcknowledgementIT');
-            $table->boolean('returnedAcknowledgementPurchasing');
+            $table->boolean('returnedAcknowledgementIT')->nullable();
+            $table->boolean('returnedAcknowledgementPurchasing')->nullable();
         });
     }
 

@@ -1,11 +1,15 @@
 <script setup>
 import HomeLayout from '@/Layouts/HomeLayout.vue';
-import { ref } from 'vue';
+import InfoBox from '@/Components/InfoBox.vue';
+import { defineOptions } from 'vue';
 import { router } from '@inertiajs/vue3';
 defineOptions({ layout: HomeLayout });
-const phoneIndex = ref(route('phone.index'));
+const phoneIndex = route('phone.index');
+const gotoHome = () => {
+    router.get(route('dashboard'));
+};
 const goToPhoneIndex = () => {
-    router.get(phoneIndex.value);
+    router.get(phoneIndex);
 };
 </script>
 <template>
@@ -18,7 +22,9 @@ const goToPhoneIndex = () => {
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-underline text-primary"
+                            <a
+                                :href="gotoHome"
+                                class="text-underline text-primary"
                                 >Home</a
                             >
                         </li>
@@ -31,20 +37,18 @@ const goToPhoneIndex = () => {
         </div>
     </div>
     <div class="app-content">
-        <div class="container p-5 pt-2">
-            <div class="row">
+        <div class="container">
+            <div class="row mb-5">
                 <div class="col-sm-12 col-md-4"></div>
                 <div class="col-sm-12 col-md-4">
-                    <div class="input-group mb-5">
-                        <label
-                            for="AssetSearchInput"
-                            class="input-group-text border-0"
+                    <div class="input-group">
+                        <label for="AssetSearchInput" class="input-group-text"
                             ><i class="bi bi-search"></i
                         ></label>
                         <input
                             id="AssetSearchInput"
                             type="text"
-                            class="form-control border-0"
+                            class="form-control"
                             placeholder="Search"
                             autofocus="false"
                         />
@@ -52,49 +56,49 @@ const goToPhoneIndex = () => {
                 </div>
                 <div class="col-sm-12 col-md-4"></div>
             </div>
-            <div class="row">
+            <div class="row mb-3 mt-5">
                 <div class="col-sm-12 col-md-2">
-                    <span class="info-box text-bg-success bg-gradient">
-                        <span class="info-box-icon">
+                    <InfoBox boxClass="text-bg-success">
+                        <template #header>
                             <i class="bi bi-pc-display"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Computer</span>
-                        </div>
-                    </span>
+                        </template>
+                        <template #content> Computer </template>
+                    </InfoBox>
                 </div>
                 <div class="col-sm-12 col-md-2">
-                    <span class="info-box text-bg-warning bg-gradient">
-                        <span class="info-box-icon">
+                    <InfoBox boxClass="text-bg-warning">
+                        <template #header>
                             <i class="bi bi-printer"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Printer</span>
-                        </div>
-                    </span>
+                        </template>
+                        <template #content> Printer </template>
+                    </InfoBox>
                 </div>
                 <div class="col-sm-12 col-md-2">
-                    <span
-                        class="info-box text-bg-primary bg-gradient"
-                        @click="goToPhoneIndex"
+                    <InfoBox
+                        boxClass="text-bg-primary"
+                        @click.prevent="goToPhoneIndex"
                     >
-                        <span class="info-box-icon">
+                        <template #header>
                             <i class="bi bi-phone"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Smartphone</span>
-                        </div>
-                    </span>
+                        </template>
+                        <template #content> Smartphone </template>
+                    </InfoBox>
                 </div>
                 <div class="col-sm-12 col-md-2">
-                    <span class="info-box text-bg-info bg-gradient">
-                        <span class="info-box-icon">
+                    <InfoBox boxClass="text-bg-info">
+                        <template #header>
                             <i class="bi bi-windows"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">License</span>
-                        </div>
-                    </span>
+                        </template>
+                        <template #content> License </template>
+                    </InfoBox>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <InfoBox boxClass="text-bg-info">
+                        <template #header>
+                            <i class="bi bi-windows"></i>
+                        </template>
+                        <template #content> Others </template>
+                    </InfoBox>
                 </div>
             </div>
         </div>

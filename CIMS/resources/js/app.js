@@ -10,7 +10,7 @@ import './bootstrap';
 const appName = import.meta.env.VITE_APP_NAME || 'CIMS';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => (title ? `${title} - ${appName}` : appName),
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.vue`,
@@ -30,13 +30,4 @@ createInertiaApp({
             window.AdminLTE.Layout.fixLayoutHeight();
         }
     },
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize AdminLTE sidebar manually
-    const toggle = document.querySelector('[data-lte-toggle="sidebar"]');
-
-    toggle?.addEventListener('click', () => {
-        document.body.classList.toggle('sidebar-open');
-    });
 });

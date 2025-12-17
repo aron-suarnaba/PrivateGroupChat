@@ -1,38 +1,40 @@
 <script setup>
 import { ref } from 'vue';
 
-const appName = ref('VueAppStarter');
+const appName = ref('CIMS');
 const currentYear = ref(new Date().getFullYear());
 </script>
+
 <template>
     <footer class="app-footer">
         <div
-            class="container mx-auto flex flex-col items-center justify-between px-4 text-sm sm:flex-row"
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center text-secondary container px-4 py-3"
         >
-            <div class="mb-2 sm:mb-0">
-                &copy; {{ currentYear }} {{ appName }}. All rights reserved.
+            <div class="mb-md-0 text-md-start mb-2 text-center">
+                &copy; {{ currentYear }} {{ appName.toUpperCase() }}. All rights
+                reserved.
             </div>
 
-            <nav>
-                <ul class="flex space-x-4">
-                    <li>
+            <nav class="mt-md-0 mt-2">
+                <ul class="d-flex list-unstyled m-0 p-0">
+                    <li class="px-2">
                         <a
                             href="/about"
-                            class="transition duration-150 ease-in-out hover:text-gray-400"
+                            class="text-decoration-none text-secondary link-secondary"
                             >About</a
                         >
                     </li>
-                    <li>
+                    <li class="px-2">
                         <a
                             href="/privacy"
-                            class="transition duration-150 ease-in-out hover:text-gray-400"
+                            class="text-decoration-none text-secondary link-secondary"
                             >Privacy Policy</a
                         >
                     </li>
-                    <li>
+                    <li class="px-2">
                         <a
                             href="/contact"
-                            class="transition duration-150 ease-in-out hover:text-gray-400"
+                            class="text-decoration-none text-secondary link-secondary"
                             >Contact</a
                         >
                     </li>

@@ -20,14 +20,22 @@ Route::post('/logout', [UserController::class, 'logout'])
     ->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
+
+    Route::get('/Home', function () {
         return Inertia::render('Home');
     })->name('dashboard');
 
-    Route::get('/AssetAndInventoryManagement', function(){
+    Route::get('/AssetAndInventoryManagement', function () {
         return Inertia::render('AssetAndInventoryManagement');
     })->name('AssetAndInventoryManagement');
 
     Route::get('/AssetAndInventoryManagement/Phone', [PhoneController::class, 'index'])
-    ->name('phone.index');
+        ->name('phone.index');
+
+    Route::get('/AssetAndInventoryManagement/Phone/AddPhone', [PhoneController::class, 'create'])
+        ->name('phone.create');
+
+    Route::get('/AssetAndInventoryManagement/Phone/{phone}', [PhoneController::class, 'show'])
+        ->name('phone.show');
+
 });

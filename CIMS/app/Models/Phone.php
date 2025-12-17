@@ -27,6 +27,7 @@ class Phone extends Model
      */
     protected $fillable = [
         'model',
+        'brand',
         'serial_num',
         'ramRom',
         'imei',
@@ -62,13 +63,11 @@ class Phone extends Model
         'returned_date' => 'date',
     ];
 
-    // --- Optional: Relationship Methods (Add these if you have related models) ---
+    public function getRouteKeyName()
+    {
+        return 'serial_num';
+    }
 
-    // /**
-    //  * Get the user that the phone was issued to.
-    //  * Assumes 'issued_to' stores a foreign key (e.g., user_id).
-    //  * If 'issued_to' is just a string name, you would NOT use this relationship.
-    //  *
     public function user()
     {
         return $this->belongsTo(User::class, 'issued_by')

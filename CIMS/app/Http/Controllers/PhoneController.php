@@ -11,9 +11,23 @@ class PhoneController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('AssetInventoryManagement/Phone');
+        $filterBrand = $request->get('brand');
+
+        $phonesQuery = Phone::query();
+
+        if ($filterBrand) {
+            $phonesQuery->where('brand', 'LIKE', '%' . $filterBrand . '%');
+        }
+        $phones = $phonesQuery
+            ->latest()
+            ->paginate(15)
+            ->withQueryString();
+
+        return Inertia::render('AssetInventoryManagement/Phone', [
+            'phones' => $phones,
+        ]);
     }
 
     /**
@@ -21,7 +35,7 @@ class PhoneController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('AssetInventoryManagement/AddPhone');
     }
 
     /**
@@ -37,7 +51,9 @@ class PhoneController extends Controller
      */
     public function show(Phone $phone)
     {
-        //
+        return Inertia::render('AssetInventoryManagement/PhoneDetails', [
+            'phone' => $phone,
+        ]);
     }
 
     /**

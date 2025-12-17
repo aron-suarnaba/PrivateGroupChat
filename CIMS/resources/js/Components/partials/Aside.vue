@@ -1,12 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 
-const logo = ref('./img/logo.png');
-const AssetInventoryManagement = ref(route('AssetInventoryManagement'));
+const title = ref('CIMS');
+import logo from '/public/img/logo.png';
+const AssetInventoryManagement = ref(route('AssetAndInventoryManagement'));
 </script>
 
 <template>
-    <aside class="app-sidebar bg-secondary-subtle" data-bs-theme="light">
+    <aside
+        class="app-sidebar bg-secondary-subtle clickable-card shadow"
+        data-bs-theme="light"
+    >
         <div class="sidebar-brand">
             <a href="#" class="brand-link">
                 <img
@@ -14,7 +18,7 @@ const AssetInventoryManagement = ref(route('AssetInventoryManagement'));
                     alt="AdminLTE Logo"
                     class="brand-image rounded-circle opacity-75 shadow"
                 />
-                <span class="brand-text fw-light">CISM</span>
+                <span class="brand-text">{{ title }}</span>
             </a>
         </div>
         <div class="sidebar-wrapper" data-overlayscrollbars="host">

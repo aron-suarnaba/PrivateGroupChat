@@ -21,7 +21,7 @@ const LoginPath = ref(route('login'));
                         id="logo"
                         class="rounded-circle me-2 shadow"
                     />
-                    <span class="fs-4">CISM</span>
+                    <span class="fs-4">CIMS</span>
                 </a>
                 <ul class="nav nav-pills">
                     <li class="nav-item">

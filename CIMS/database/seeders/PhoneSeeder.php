@@ -4,65 +4,72 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Phone; // Assuming your Phone model is in App\Models\Phone
+use Carbon\Carbon;
 
 class PhoneSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        // Clear the table before seeding (optional, but good for clean runs)
-        // Phone::truncate();
-
-        // --- Seed Data for 'phone' table ---
-
         DB::table('phone')->insert([
-            // 1. Issued Phone Record (Still with the user 'Alice Smith')
             [
-                'model' => 'iPhone 14 Pro',
-                'serial_num' => 'G6Z9M1T2C4',
-                'ramRom' => '8GB/256GB',
-                'imei' => '355883011234567',
-                'issued_accessories' => 'Original box, charger, protective case',
-                'with_cashout' => false,
-                'issued_to' => 'Alice Smith',
-                'date_issued' => '2025-01-15',
-                'issued_by' => 'Carol White', // Assuming Carol is in Purchasing
+                'model' => 'iPhone 15 Pro',
+                'serial_num' => 'SN-AAPL-9921',
+                'brand' => 'Apple',
+                'ram' => '8GB',
+                'rom' => '256GB',
+                'imei_one' => '354211000123456',
+                'issued_to' => 'John Doe',
+                'date_issued' => Carbon::now()->subMonths(2),
                 'issuedAcknowledgementIT' => true,
-                'issuedAcknowledgementPurchasing' => true,
-                'returned_accessories' => null, // null because it hasn't been returned
-                'returned_by' => null,
-                'returned_date' => null,
-                'returned_to' => null,
-                'returnedAcknowledgementIT' => false,
-                'returnedAcknowledgementPurchasing' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => Carbon::now(),
             ],
-
-            // 2. Returned Phone Record (Completed asset cycle)
             [
-                'model' => 'Samsung Galaxy S22',
-                'serial_num' => 'A7F4J8S3K1',
-                'ramRom' => '8GB/128GB',
-                'imei' => '359876009876543',
-                'issued_accessories' => 'Original box, charger, SIM eject tool',
-                'with_cashout' => true,
-                'issued_to' => 'David Lee', // Assuming David was the previous user
-                'date_issued' => '2023-08-20',
-                'issued_by' => 'Carol White',
+                'model' => 'Galaxy S23 Ultra',
+                'serial_num' => 'SN-SAMS-4432',
+                'brand' => 'Samsung',
+                'ram' => '12GB',
+                'rom' => '512GB',
+                'imei_one' => '358822000654321',
+                'issued_to' => 'Jane Smith',
+                'date_issued' => Carbon::now()->subDays(15),
                 'issuedAcknowledgementIT' => true,
-                'issuedAcknowledgementPurchasing' => true,
-                'returned_accessories' => 'Charger, SIM eject tool (Box missing)', // Details upon return
-                'returned_by' => 'David Lee',
-                'returned_date' => '2024-11-25',
-                'returned_to' => 'Alice Smith', // Assuming Alice (IT) received it
-                'returnedAcknowledgementIT' => true,
-                'returnedAcknowledgementPurchasing' => true,
-                'created_at' => now()->subYear(),
-                'updated_at' => now(),
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'model' => 'Redmi Note 12',
+                'serial_num' => 'SN-REDM-1102',
+                'brand' => 'Redmi',
+                'ram' => '6GB',
+                'rom' => '128GB',
+                'imei_one' => '864433000987654',
+                'issued_to' => 'Alice Johnson',
+                'date_issued' => Carbon::now()->subMonths(1),
+                'issuedAcknowledgementIT' => false,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'model' => 'Oppo Reno 10',
+                'serial_num' => 'SN-OPPO-8877',
+                'brand' => 'Oppo',
+                'ram' => '8GB',
+                'rom' => '256GB',
+                'imei_one' => '352211444555666',
+                'issued_to' => 'Bob Wilson',
+                'date_issued' => null, // Not issued yet
+                'issuedAcknowledgementIT' => false,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'model' => 'Vivo V27',
+                'serial_num' => 'SN-VIVO-3344',
+                'brand' => 'Vivo',
+                'ram' => '8GB',
+                'rom' => '128GB',
+                'imei_one' => '359988111222333',
+                'issued_to' => 'Charlie Davis',
+                'date_issued' => Carbon::now()->subDays(5),
+                'issuedAcknowledgementIT' => true,
+                'created_at' => Carbon::now(),
             ],
         ]);
     }
