@@ -46,7 +46,7 @@ defineOptions({ layout: HomeLayout });
                             >
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Add a phone
+                            Add Smartphone
                         </li>
                     </ol>
                 </div>

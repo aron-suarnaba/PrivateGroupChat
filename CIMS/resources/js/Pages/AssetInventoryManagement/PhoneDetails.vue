@@ -250,6 +250,16 @@ const formatDate = (dateString, locale = 'en-US') => {
                                         </td>
                                     </tr>
                                     <tr>
+                                        <th scope="row">Issued Department</th>
+                                        <td>
+                                            {{
+                                                props.phone
+                                                    .issued_to_department ||
+                                                'N/A'
+                                            }}
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th scope="row">Issued Date</th>
                                         <td>
                                             {{
